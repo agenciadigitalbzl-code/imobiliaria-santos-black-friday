@@ -98,13 +98,19 @@ a:focus-visible{outline:3px solid #AFC7FF;outline-offset:3px}
 .btn-whats:active{transform:scale(.97)}
 .btn-whats svg{width:26px;height:26px;flex:0 0 auto}
 .pulso{animation:pulso 2.2s ease-out infinite}
-.btn-contorno{
-  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;
-  border:1.5px solid var(--whats);color:#fff;text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap;
-  transition:background .15s ease;
+.btn-topo{
+  display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:6px 22px 6px 6px;border-radius:999px;
+  background:linear-gradient(180deg,#34E07A 0%,#1FBF5C 100%);color:var(--whats-escuro);text-decoration:none;white-space:nowrap;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 0 4px rgba(37,211,102,.14),0 10px 26px rgba(37,211,102,.28);
+  transition:transform .15s ease,box-shadow .15s ease,filter .15s ease;
 }
-.btn-contorno:hover{background:rgba(37,211,102,.12)}
-.btn-contorno svg{width:18px;height:18px;color:var(--whats)}
+.btn-topo:hover{filter:brightness(1.05);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 0 6px rgba(37,211,102,.18),0 14px 30px rgba(37,211,102,.36)}
+.btn-topo:active{transform:scale(.97)}
+.btn-topo-icone{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--whats-escuro);display:flex;align-items:center;justify-content:center}
+.btn-topo-icone svg{width:22px;height:22px;color:#34E07A}
+.btn-topo-textos{display:flex;flex-direction:column;line-height:1.05}
+.btn-topo-textos small{font-family:var(--corpo);font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;opacity:.8}
+.btn-topo-textos b{font-family:var(--titulo);font-size:21px;font-weight:800;letter-spacing:.3px}
 
 /* ---------- Hero ---------- */
 .hero{padding-block:8px 24px}
@@ -194,9 +200,9 @@ h1 span{display:block;color:#3D78FF;text-shadow:0 0 24px rgba(47,107,255,.6)}
   flex:0 0 auto;width:128px;height:128px;position:relative;border-radius:50%;
   background:var(--marinho);border:3px solid var(--neon);box-shadow:0 0 18px rgba(47,107,255,.65);
 }
-.selo-mcmv svg{position:absolute;inset:0;width:100%;height:100%}
-.selo-mcmv .miolo{position:absolute;inset:22%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.selo-mcmv .miolo img{width:84%}
+.selo-mcmv svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.selo-mcmv .miolo{position:absolute;inset:15%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 0 0 2px rgba(201,209,224,.55)}
+.selo-mcmv .miolo img{width:106%;max-width:none;flex:none}
 
 /* Contatos */
 .links{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
@@ -283,7 +289,7 @@ h1 span{display:block;color:#3D78FF;text-shadow:0 0 24px rgba(47,107,255,.6)}
   .condicoes-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:stretch}
   .oferta{flex-direction:column;justify-content:center;text-align:center;gap:22px;padding:32px}
   .oferta .preco{font-size:68px}
-  .selo-mcmv{width:170px;height:170px}
+  .selo-mcmv{width:190px;height:190px}
   .link{flex-direction:row;align-items:center;gap:14px;padding:18px 20px}
   .link-seta{display:block}
   .cta-final{padding:64px 48px}
@@ -322,9 +328,9 @@ h1 span{display:block;color:#3D78FF;text-shadow:0 0 24px rgba(47,107,255,.6)}
 <header class="topo">
   <div class="container">
     <img class="topo-logo" src="logo-santos-branca.png" alt="Imobiliária Santos" width="170" height="58">
-    <a class="btn-contorno topo-cta js-whatsapp" href="https://wa.me/5563981115372?text=Ol%C3%A1!%20Vi%20a%20Black%20Friday%20da%20Casa%20Nova%20e%20quero%20saber%20as%20condi%C3%A7%C3%B5es%20para%20sair%20do%20aluguel." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><use href="#i-whats"/></svg>
-      (63) 98111-5372
+    <a class="btn-topo topo-cta js-whatsapp" href="https://wa.me/5563981115372?text=Ol%C3%A1!%20Vi%20a%20Black%20Friday%20da%20Casa%20Nova%20e%20quero%20saber%20as%20condi%C3%A7%C3%B5es%20para%20sair%20do%20aluguel." target="_blank" rel="noopener" aria-label="Falar com um corretor no WhatsApp: (63) 98111-5372">
+      <span class="btn-topo-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-whats"/></svg></span>
+      <span class="btn-topo-textos"><small>Fale com um corretor</small><b>(63) 98111-5372</b></span>
     </a>
   </div>
 </header>
@@ -401,8 +407,8 @@ h1 span{display:block;color:#3D78FF;text-shadow:0 0 24px rgba(47,107,255,.6)}
           </div>
           <div class="selo-mcmv" role="img" aria-label="Financiamento facilitado pelo Minha Casa Minha Vida">
             <svg viewBox="0 0 122 122" aria-hidden="true">
-              <defs><path id="arcoSelo" d="M61,61 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0"/></defs>
-              <text font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="12.5" letter-spacing="1.6" fill="#fff"><textPath href="#arcoSelo" startOffset="2%">FINANCIAMENTO • FACILITADO •</textPath></text>
+              <defs><path id="arcoSelo" d="M61,61 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+              <text font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="12" fill="#fff"><textPath href="#arcoSelo" textLength="312" lengthAdjust="spacing">FINANCIAMENTO • FACILITADO • FINANCIAMENTO • FACILITADO •&#160;</textPath></text>
             </svg>
             <div class="miolo"><img src="logo-mcmv.png" alt="" width="84" height="54" loading="lazy"></div>
           </div>
